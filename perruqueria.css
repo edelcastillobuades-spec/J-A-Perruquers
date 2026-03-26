@@ -145,7 +145,7 @@ body {
     color: white;
 }
 
-.hero-image {
+.hero-image img {
     flex: 1;
     display: flex;
     justify-content: center;
