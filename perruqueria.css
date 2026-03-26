@@ -41,6 +41,22 @@ body {
 .logo h2 {
     color: #1a1a1a;
     font-size: 1.8rem;
+    margin: 0;
+}
+
+/* LOGO IMAGEN - ESTILOS CORREGIDOS */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .logo span {
@@ -130,7 +146,7 @@ body {
 }
 
 .btn-primary:hover {
-    background: #DC143C;
+    background: #c82333;
     transform: translateY(-2px);
 }
 
@@ -145,25 +161,24 @@ body {
     color: white;
 }
 
-.hero-image img {
+/* Hero Image - CORREGIDO */
+.hero-image {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 150px;
 }
 
-.image-placeholder {
+.hero-image img {
     width: 100%;
     max-width: 500px;
     height: 500px;
-    background: linear-gradient(45deg, #d4af37, #f4e4bc);
+    object-fit: cover;
     border-radius: 20px;
-    position: relative;
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
+/* Resto del CSS sin cambios... */
 .sobre-placeholder {
     height: 400px;
     background: linear-gradient(135deg, #e9ecef, #dee2e6);
@@ -313,6 +328,7 @@ section {
 
 .sobre-image img {
     width: 100%;
+    border-radius: 15px;
 }
 
 /* Contacto */
@@ -328,23 +344,21 @@ section {
 
 .contacto-info {
     display: flex;
-    justify-content: space-around;
-    gap: 4rem;
+    flex-direction: column;
+    gap: 2rem;
 }
  
- .contacto-item {
-     display: flex;
-     gap: 1.5rem;
+.contacto-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
 }
-
-.contacto-item:nth-child(3) {
-    margin-top: 0;
- }      
 
 .contacto-item i {
     font-size: 2rem;
     color: #DC143C;
     width: 50px;
+    flex-shrink: 0;
 }
 
 .contacto-item h3 {
@@ -355,28 +369,6 @@ section {
 .contacto-item a {
     color: #DC143C;
     text-decoration: none;
-}
-
-.contacto-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.contacto-form input,
-.contacto-form textarea {
-    padding: 15px;
-    border: 2px solid #e9ecef;
-    border-radius: 10px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-}
-
-.contacto-form input:focus,
-.contacto-form textarea:focus {
-    outline: none;
-    border-color: #DC143C;
 }
 
 /* Footer */
@@ -410,9 +402,42 @@ section {
     align-items: center;
     justify-content: center;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
 .whatsapp-float:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 20px 50px;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+    
+    .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo img {
+        width: 80px !important;
+        height: 80px !important;
+    }
 }
