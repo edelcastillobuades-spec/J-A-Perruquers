@@ -38,31 +38,34 @@ body {
     height: 70px;
 }
 
-.logo h2 {
-    color: #1a1a1a;
-    font-size: 1.8rem;
-    margin: 0;
-}
-
-/* LOGO IMAGEN - ESTILOS CORREGIDOS */
+/* LOGO HEADER (CORREGIDO Y OPTIMIZADO) */
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .logo img {
-    width: 100px;
-    height: 100px    ;
+    width: 70px;
+    height: 70px;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.logo h2 {
+    color: #1a1a1a;
+    font-size: 1.6rem;
+    margin: 0;
+    line-height: 1.2;
 }
 
 .logo span {
     color: #DC143C;
 }
 
+/* NAV */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -128,6 +131,7 @@ body {
     flex-wrap: wrap;
 }
 
+/* BOTONES */
 .btn {
     padding: 15px 30px;
     border: none;
@@ -161,23 +165,26 @@ body {
     color: white;
 }
 
-/* Hero Image - CORREGIDO */
-.hero-image {
-    flex: 1;
+/* HERO LOGO GRANDE */
+.hero-logo {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1;
+    max-width: 300px;
 }
 
-.hero-image img {
+.hero-logo img {
     width: 276px;
     height: 183px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    max-width: 100%;
+    height: auto;
 }
 
-/* Resto del CSS sin cambios... */
+/* Placeholder */
 .sobre-placeholder {
     height: 400px;
     background: linear-gradient(135deg, #e9ecef, #dee2e6);
@@ -256,8 +263,6 @@ section {
 
 .rating h2 {
     font-size: 4rem;
-    color: #1a1a1a;
-    margin-bottom: 0.5rem;
 }
 
 .rating h2 span {
@@ -285,14 +290,6 @@ section {
     background: #f8f9fa;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-
-.testimonio p {
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: #444;
 }
 
 .autor {
@@ -313,61 +310,16 @@ section {
     align-items: center;
 }
 
-.sobre-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #1a1a1a;
-}
-
-.sobre-text p {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 1.5rem;
-}
-
-.sobre-image img {
-    width: 100%;
-    border-radius: 15px;
-}
-
 /* Contacto */
-.contacto {
-    background: white;
-}
-
 .contacto-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
 }
 
-.contacto-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
- 
 .contacto-item {
     display: flex;
     gap: 1.5rem;
-    align-items: flex-start;
-}
-
-.contacto-item i {
-    font-size: 2rem;
-    color: #DC143C;
-    width: 50px;
-    flex-shrink: 0;
-}
-
-.contacto-item h3 {
-    color: #1a1a1a;
-    margin-bottom: 0.5rem;
-}
-
-.contacto-item a {
-    color: #DC143C;
-    text-decoration: none;
 }
 
 /* Footer */
@@ -378,12 +330,7 @@ section {
     padding: 2rem 0;
 }
 
-.footer a {
-    color: #DC143C;
-    text-decoration: none;
-}
-
-/* WhatsApp Float */
+/* WhatsApp */
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -392,51 +339,47 @@ section {
     right: 40px;
     background: #25d366;
     color: white;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-    z-index: 1000;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s;
-    text-decoration: none;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
-}
-
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
     }
-    
+
     .hamburger {
         display: flex;
     }
-    
+
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 120px 20px 50px;
     }
-    
-    .hero-content {
-        padding-right: 0;
-        margin-bottom: 2rem;
-    }
-    
+
     .logo {
         flex-direction: column;
         text-align: center;
+        gap: 5px;
     }
-    
+
     .logo img {
-        width: 80px !important;
-        height: 80px !important;
+        width: 60px;
+        height: 60px;
+    }
+
+    .hero-logo img {
+        width: 220px;
+        height: 146px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo img {
+        width: 180px;
+        height: 120px;
     }
 }
