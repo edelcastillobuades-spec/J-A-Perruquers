@@ -99,6 +99,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    gap: 50px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     padding: 100px 20px 50px;
 }
@@ -107,6 +108,7 @@ body {
     flex: 1;
     max-width: 600px;
     padding-right: 2rem;
+    margin-left: 40px;
 }
 
 .hero-content h1 {
@@ -474,8 +476,8 @@ section {
 }
 
 .hero-logo img {
-    width: 276px !important;
-    height: 183px !important;
+    width: 350px; 
+    height: auto;
     object-fit: contain;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
